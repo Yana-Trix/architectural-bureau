@@ -1,0 +1,416 @@
+/* ==========================================================================
+   1. Universal CSS Reset & Variable System (Relative Metrics)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7f7f7;
+    --text-primary: #121212;
+    --text-secondary: #555555;
+    --border-color: rgba(0, 0, 0, 0.12);
+    --accent-color: #000000;
+    --accent-text: #ffffff;
+    --valid-color: #2e7d32;
+    --invalid-color: #c62828;
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Ergonomics & Squircle geometry */
+    --border-radius-sm: 0.5rem;
+    --border-radius-lg: 1rem;
+}
+
+/* Inversion Theme Switch Selector */
+body:has(#theme-toggle:checked) {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #161616;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --border-color: rgba(255, 255, 255, 0.15);
+    --accent-color: #ffffff;
+    --accent-text: #000000;
+}
+
+html {
+    font-size: 100%; /* 1rem = 16px default */
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents mobile horizontal scrollbars */
+}
+
+/* ==========================================================================
+   2. Mobile-First Layout: Header & Navigation
+   ========================================================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background-color: var(--bg-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.burger-toggle {
+    display: none;
+}
+
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.8rem;
+    height: 1.3rem;
+    cursor: pointer;
+}
+
+.burger-icon span {
+    height: 0.18rem;
+    width: 100%;
+    background-color: var(--text-primary);
+    border-radius: 0.1rem;
+    transition: all 0.3s ease;
+}
+
+.nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background-color: var(--bg-primary);
+    padding: 1.5rem 0;
+    border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.burger-toggle:checked ~ .nav {
+    display: block;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. Hero Section & Thumb Zone Ergonomics
+   ========================================================================== */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: flex-end; /* Mobile Thumb zone placement */
+    padding: 3rem 1.25rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%), 
+                url('images/hero-render.webp') no-repeat center/cover;
+    color: #ffffff;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%; /* Responsive touch target */
+    padding: 1rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--accent-text);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--border-radius-sm); /* Squircle corner topology */
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   4. Asymmetric CSS Grid Section
+   ========================================================================== */
+.projects, .feedback {
+    padding: 3.5rem 1.25rem;
+}
+
+.section-title-wrapper {
+    margin-bottom: 2rem;
+}
+
+.section-title-wrapper h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title-wrapper p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.75rem;
+}
+
+.card {
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 0.0625rem solid var(--border-color);
+}
+
+.card-media {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-params {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+}
+
+.project-params div {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.0625rem dashed var(--border-color);
+    padding-bottom: 0.25rem;
+}
+
+.project-params dt {
+    color: var(--text-secondary);
+}
+
+.project-params dd {
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   5. Interactive Form Component & Pure CSS Validation
+   ========================================================================== */
+.feedback {
+    background-color: var(--bg-secondary);
+    border-top: 0.0625rem solid var(--border-color);
+    border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1rem;
+    border: 0.0625rem solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+/* Mandatory CSS Validation Rules */
+.form-group input:focus:invalid {
+    border-color: var(--invalid-color);
+}
+
+.form-group input:valid {
+    border-color: var(--valid-color);
+}
+
+/* ==========================================================================
+   6. Footer Component
+   ========================================================================== */
+.footer {
+    padding: 2.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    font-size: 0.9rem;
+}
+
+.legal-info a {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.theme-switch input {
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: var(--accent-color);
+}
+
+/* ==========================================================================
+   7. Desktop Media Query Transformation (@media >= 1024px)
+   ========================================================================== */
+@media (min-width: 1024px) {
+    .header {
+        padding: 1.25rem 4rem;
+    }
+
+    .burger-icon {
+        display: none; /* Hide burger icon on Desktop */
+    }
+
+    .nav {
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0;
+        background: none;
+        border: none;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+
+    .hero {
+        min-height: 85vh;
+        align-items: center;
+        padding: 4rem 8rem;
+    }
+
+    .hero-content {
+        max-width: 45rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.75rem;
+    }
+
+    .btn {
+        width: auto; /* Revert full width on desktop */
+        padding: 1rem 2.5rem;
+    }
+
+    .projects, .feedback {
+        padding: 5rem 4rem;
+    }
+
+    /* Desktop Asymmetric Grid Layout Matrix */
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .card-featured {
+        grid-column: span 2;
+    }
+
+    .card-wide {
+        grid-column: span 3;
+    }
+
+    .feedback-form {
+        max-width: 38rem;
+        margin: 0 auto;
+    }
+
+    .footer {
+        padding: 3rem 4rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
