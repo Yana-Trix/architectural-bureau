@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architectural Bureau Catalog | Жұмабек Даниял Талғатұлы</title>
+    <title>Catalog Website for an Architectural Bureau | Жұмабек Даниял Талғатұлы</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. Header / Nav Component -->
+    <!-- 1. Header/Nav Component -->
     <header class="header">
-        <a href="#" class="logo">
-            <img src="images/logo-icon.svg" alt="Bureau Logo" class="logo-icon" width="24" height="24">
-            <span>ARCHI.BUREAU</span>
-        </a>
-        <input type="checkbox" id="burger-toggle" class="burger-toggle" aria-label="Toggle Navigation Menu">
+        <a href="#" class="logo">ARCHI.STUDIO</a>
+        <input type="checkbox" id="burger-toggle" class="burger-toggle" aria-label="Toggle menu">
         <label for="burger-toggle" class="burger-icon">
             <span></span>
             <span></span>
@@ -35,164 +32,129 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Designing Space for Living</h1>
-                <p>Architectural design, structural surveying, and modern urban engineering concept development.</p>
-                <a href="#projects" class="btn btn-cta">Explore Portfolio</a>
+                <p>Digital architectural portfolio presenting implemented building concepts and design stages.</p>
+                <a href="#projects" class="btn btn-cta">Explore Projects</a>
             </div>
         </section>
 
-        <!-- 3. Grid Section Component (Architectural Objects) -->
+        <!-- 3. Grid Section Component -->
         <section id="projects" class="projects">
-            <div class="section-title-wrapper">
-                <h2>Implemented Architectural Concepts</h2>
-                <p>Asymmetric grid matrix of selected international and local projects.</p>
+            <div class="section-header">
+                <h2>Architectural Objects</h2>
+                <p>Asymmetric grid matrix of implemented projects</p>
             </div>
-            
+
             <div class="grid-container">
-                <article class="card card-featured">
-                    <div class="card-media">
-                        <img src="images/project-villa.webp" alt="Minimalist Villa Concept" loading="lazy">
+                <article class="card card-wide">
+                    <div class="card-image-wrapper">
+                        <img src="images/project1.webp" alt="Minimalist Residential Complex" loading="lazy">
                     </div>
-                    <div class="card-body">
-                        <h3>Minimalist Villa Concept</h3>
-                        <dl class="project-params">
-                            <div>
-                                <dt>Building Area:</dt>
-                                <dd>450 m²</dd>
-                            </div>
-                            <div>
-                                <dt>Year of Construction:</dt>
-                                <dd>2025</dd>
-                            </div>
-                            <div>
-                                <dt>Geographical Location:</dt>
-                                <dd>Almaty, Kazakhstan</dd>
-                            </div>
+                    <div class="card-content">
+                        <h3>Minimalist Residential Complex</h3>
+                        <dl class="card-details">
+                            <div><dt>Building Area:</dt><dd>450 m²</dd></div>
+                            <div><dt>Year of Construction:</dt><dd>2025</dd></div>
+                            <div><dt>Geographical Location:</dt><dd>Almaty, Kazakhstan</dd></div>
                         </dl>
                     </div>
                 </article>
 
                 <article class="card">
-                    <div class="card-media">
-                        <img src="images/project-residence.webp" alt="Urban Glass Residence" loading="lazy">
+                    <div class="card-image-wrapper">
+                        <img src="images/project2.webp" alt="Modernist Private Villa" loading="lazy">
                     </div>
-                    <div class="card-body">
-                        <h3>Urban Glass Residence</h3>
-                        <dl class="project-params">
-                            <div>
-                                <dt>Building Area:</dt>
-                                <dd>280 m²</dd>
-                            </div>
-                            <div>
-                                <dt>Year of Construction:</dt>
-                                <dd>2024</dd>
-                            </div>
-                            <div>
-                                <dt>Geographical Location:</dt>
-                                <dd>Astana, Kazakhstan</dd>
-                            </div>
+                    <div class="card-content">
+                        <h3>Modernist Private Villa</h3>
+                        <dl class="card-details">
+                            <div><dt>Building Area:</dt><dd>280 m²</dd></div>
+                            <div><dt>Year of Construction:</dt><dd>2024</dd></div>
+                            <div><dt>Geographical Location:</dt><dd>Astana, Kazakhstan</dd></div>
                         </dl>
                     </div>
                 </article>
 
                 <article class="card">
-                    <div class="card-media">
-                        <img src="images/project-pavilion.webp" alt="Eco Timber Pavilion" loading="lazy">
+                    <div class="card-image-wrapper">
+                        <img src="images/project3.webp" alt="Urban Business Pavilion" loading="lazy">
                     </div>
-                    <div class="card-body">
-                        <h3>Eco Timber Pavilion</h3>
-                        <dl class="project-params">
-                            <div>
-                                <dt>Building Area:</dt>
-                                <dd>150 m²</dd>
-                            </div>
-                            <div>
-                                <dt>Year of Construction:</dt>
-                                <dd>2026</dd>
-                            </div>
-                            <div>
-                                <dt>Geographical Location:</dt>
-                                <dd>Shymkent, Kazakhstan</dd>
-                            </div>
+                    <div class="card-content">
+                        <h3>Urban Business Pavilion</h3>
+                        <dl class="card-details">
+                            <div><dt>Building Area:</dt><dd>150 m²</dd></div>
+                            <div><dt>Year of Construction:</dt><dd>2026</dd></div>
+                            <div><dt>Geographical Location:</dt><dd>Shymkent, Kazakhstan</dd></div>
                         </dl>
                     </div>
                 </article>
 
                 <article class="card card-wide">
-                    <div class="card-media">
-                        <img src="images/project-center.webp" alt="Cultural Innovation Center" loading="lazy">
+                    <div class="card-image-wrapper">
+                        <img src="images/project4.webp" alt="Cultural Innovation Center" loading="lazy">
                     </div>
-                    <div class="card-body">
+                    <div class="card-content">
                         <h3>Cultural Innovation Center</h3>
-                        <dl class="project-params">
-                            <div>
-                                <dt>Building Area:</dt>
-                                <dd>1200 m²</dd>
-                            </div>
-                            <div>
-                                <dt>Year of Construction:</dt>
-                                <dd>2026</dd>
-                            </div>
-                            <div>
-                                <dt>Geographical Location:</dt>
-                                <dd>Atyrau, Kazakhstan</dd>
-                            </div>
+                        <dl class="card-details">
+                            <div><dt>Building Area:</dt><dd>1200 m²</dd></div>
+                            <div><dt>Year of Construction:</dt><dd>2026</dd></div>
+                            <div><dt>Geographical Location:</dt><dd>Atyrau, Kazakhstan</dd></div>
                         </dl>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- 4. Feedback Form Component -->
+        <!-- 4. Feedback Form Component (БЕЗ method="POST" во избежание ошибки 405) -->
         <section id="contacts" class="feedback">
-            <div class="section-title-wrapper">
-                <h2>Collect Initial Project Requirements</h2>
-                <p>Fill in the preliminary criteria for your upcoming architectural project.</p>
+            <div class="section-header">
+                <h2>Project Requirements Collection</h2>
+                <p>Fill out the form below to share your initial criteria.</p>
             </div>
 
-            <form class="feedback-form" action="#" method="POST">
+            <form class="feedback-form" action="javascript:void(0);">
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="e.g. Daniyal Zhumabek">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Daniyal Zhumabek">
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required pattern="[\+]\d{1,4}[\s]?\d{3}[\s]?\d{3}[\s]?\d{4}" placeholder="+7 707 123 4567">
+                    <label for="phone">Phone</label>
+                    <!-- Гибкий формат телефона: принимает любой стандартный номер -->
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (707) 123-4567">
                 </div>
 
                 <div class="form-group">
                     <label for="area">Building Area (m²)</label>
-                    <input type="number" id="area" name="area" min="50" max="10000" required placeholder="e.g. 350">
+                    <input type="number" id="area" name="area" min="10" required placeholder="350">
                 </div>
 
                 <div class="form-group">
-                    <label for="budget">Budget Constraints ($)</label>
-                    <input type="text" id="budget" name="budget" required placeholder="e.g. $150,000 - $300,000">
+                    <label for="budget">Budget Constraints</label>
+                    <input type="text" id="budget" name="budget" required placeholder="$100,000 - $250,000">
                 </div>
 
-                <button type="submit" class="btn btn-submit">Submit Project Details</button>
+                <button type="submit" class="btn btn-submit">Submit Requirements</button>
             </form>
         </section>
     </main>
 
     <!-- 5. Footer Component -->
     <footer class="footer">
-        <div class="footer-block legal-info">
-            <p><strong>Registration Certificate:</strong> No. KZ-ARCH-2026-9901-IITU</p>
-            <p>Read about our bureau on <a href="https://www.architecturaldigest.com" target="_blank" rel="noopener noreferrer">Architectural Digest</a> & <a href="https://www.archdaily.com" target="_blank" rel="noopener noreferrer">ArchDaily</a></p>
+        <div class="footer-info">
+            <p><strong>Registration Certificate:</strong> KZ-ARCH-2026-9901</p>
+            <p>Featured in <a href="https://www.architecturaldigest.com" target="_blank" rel="noopener">Architectural Digest</a></p>
         </div>
 
-        <nav class="footer-block footer-nav" aria-label="Footer Navigation">
+        <nav class="footer-links">
             <a href="#projects">Projects</a>
             <a href="#services">Services</a>
             <a href="#philosophy">Philosophy</a>
             <a href="#contacts">Contacts</a>
         </nav>
 
-        <div class="footer-block theme-control">
+        <div class="theme-switch-container">
             <label class="theme-switch" for="theme-toggle">
                 <input type="checkbox" id="theme-toggle">
-                <span class="theme-label">Monochrome Dark Mode</span>
+                <span class="theme-slider">Monochrome Dark Mode</span>
             </label>
         </div>
     </footer>
